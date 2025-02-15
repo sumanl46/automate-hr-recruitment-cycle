@@ -1,0 +1,164 @@
+#!/usr/bin/bash
+
+# Check if a context name is provided
+if [ $# -eq 0 ]; then
+    echo "Error: Please provide a context name"
+    echo "Usage: bun context <Path/ContextName> [--empty]"
+    exit 1
+fi
+
+# Initialize variables
+FULL_PATH=""
+CONTEXT_NAME=""
+IS_EMPTY=false
+
+# Parse arguments
+for arg in "$@"; do
+    case $arg in
+        --empty)
+            IS_EMPTY=true
+            ;;
+        *)
+            if [[ $arg != --* ]]; then
+                FULL_PATH=$arg
+            fi
+            ;;
+    esac
+done
+
+# Validate context name
+if [ -z "$FULL_PATH" ]; then
+    echo "Error: Context name/path is required"
+    exit 1
+fi
+
+# Split path into directory and filename
+DIR=$(dirname "$FULL_PATH")
+CONTEXT_NAME=$(basename "$FULL_PATH")
+
+# Detect project type (TypeScript or JavaScript)
+detect_project_type() {
+    if [ -f "tsconfig.json" ]; then
+        echo "tsx"
+    elif [ -f "jsconfig.json" ] || [ -f "next.config.js" ]; then
+        echo "jsx"
+    else
+        echo "js"
+    fi
+}
+
+# Create full contexts path (including any subdirectories)
+mkdir -p "contexts/$DIR"
+
+# Detect file extension
+ext=$(detect_project_type)
+
+# Define the filename
+filename="${CONTEXT_NAME}.$ext"
+filepath="contexts/$DIR/$filename"
+
+# Check if file already exists
+if [ -f "$filepath" ]; then
+    echo "Error: $filepath already exists."
+    exit 1
+fi
+
+# Generate content based on flags
+if [ "$IS_EMPTY" = true ]; then
+    # Create an empty file
+    touch "$filepath"
+    echo "Created empty context file: $filepath"
+else
+    # Generate boilerplate content based on extension
+    if [ "$ext" = "tsx" ]; then
+        cat > "$filepath" << EOL
+import React, { createContext, useState, useContext, ReactNode } from 'react';
+
+// Define the shape of the context
+interface ${CONTEXT_NAME}ContextType {
+  // Add your context state and methods here
+  value?: any;
+  setValue?: (value: any) => void;
+}
+
+// Create the context with a default value
+const ${CONTEXT_NAME}Context = createContext<${CONTEXT_NAME}ContextType | undefined>(undefined);
+
+// Create a provider component
+export const ${CONTEXT_NAME}Provider: React.FC<{ children: ReactNode }> = ({ children }) => {
+  const [value, setValue] = useState<any>(null);
+
+  return (
+    <${CONTEXT_NAME}Context.Provider value={{ value, setValue }}>
+      {children}
+    </${CONTEXT_NAME}Context.Provider>
+  );
+};
+
+// Custom hook to use the context
+export const use${CONTEXT_NAME} = () => {
+  const context = useContext(${CONTEXT_NAME}Context);
+  if (context === undefined) {
+    throw new Error('use${CONTEXT_NAME} must be used within a ${CONTEXT_NAME}Provider');
+  }
+  return context;
+};
+EOL
+    elif [ "$ext" = "jsx" ]; then
+        cat > "$filepath" << EOL
+import React, { createContext, useState, useContext } from 'react';
+
+// Create the context with a default value
+const ${CONTEXT_NAME}Context = createContext();
+
+// Create a provider component
+export const ${CONTEXT_NAME}Provider = ({ children }) => {
+  const [value, setValue] = useState(null);
+
+  return (
+    <${CONTEXT_NAME}Context.Provider value={{ value, setValue }}>
+      {children}
+    </${CONTEXT_NAME}Context.Provider>
+  );
+};
+
+// Custom hook to use the context
+export const use${CONTEXT_NAME} = () => {
+  const context = useContext(${CONTEXT_NAME}Context);
+  if (context === undefined) {
+    throw new Error('use${CONTEXT_NAME} must be used within a ${CONTEXT_NAME}Provider');
+  }
+  return context;
+};
+EOL
+    else
+        cat > "$filepath" << EOL
+import { createContext, useState, useContext } from 'react';
+
+// Create the context with a default value
+const ${CONTEXT_NAME}Context = createContext();
+
+// Create a provider component
+export const ${CONTEXT_NAME}Provider = ({ children }) => {
+  const [value, setValue] = useState(null);
+
+  return (
+    <${CONTEXT_NAME}Context.Provider value={{ value, setValue }}>
+      {children}
+    </${CONTEXT_NAME}Context.Provider>
+  );
+};
+
+// Custom hook to use the context
+export const use${CONTEXT_NAME} = () => {
+  const context = useContext(${CONTEXT_NAME}Context);
+  if (context === undefined) {
+    throw new Error('use${CONTEXT_NAME} must be used within a ${CONTEXT_NAME}Provider');
+  }
+  return context;
+};
+EOL
+    fi
+
+    echo "Created context file: $filepath"
+fi
