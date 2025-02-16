@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import React, { createContext, useState, useContext, ReactNode } from "react";
+import React, { createContext, useState, useContext, ReactNode, useEffect } from "react";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 
@@ -22,13 +22,16 @@ export const WrapperContextProvider: React.FC<{ children: ReactNode }> = ({ chil
 	const pathname = usePathname();
 
 	const isHomePage = pathname === "/";
+	useEffect(() => {
+		console.log(pathname);
+	}, []);
 
 	return (
 		<WrapperContextContext.Provider value={{ value, setValue }}>
-			<Navbar />
-
-			<div className={`${isHomePage ? "" : "pt-[15vh]"}`}>{children}</div>
-
+			{pathname !== "/signin" && pathname !== "/signup" ? <Navbar /> : ""}
+			<div className={`${isHomePage ? "" : pathname !== "/signin" && pathname !== "/signup" ? "pt-[15vh]" : ""}`}>
+				{children}
+			</div>
 			<Footer />
 		</WrapperContextContext.Provider>
 	);
