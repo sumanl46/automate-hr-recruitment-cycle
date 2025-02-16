@@ -3,6 +3,7 @@ import { jobListings } from "@/data/jobListings";
 import { notFound } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 export const metadata: Metadata = {
 	title: "Job Details | HRCycle",
@@ -33,7 +34,11 @@ export default function JobDetailsPage({ params }: { params: { id: string } }) {
 							{job.company}
 						</div>
 						<div className="mt-2 flex items-center text-sm text-gray-500">
-							<svg className="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+							<svg
+								className="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-400"
+								fill="currentColor"
+								viewBox="0 0 20 20"
+							>
 								<path
 									fillRule="evenodd"
 									d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
@@ -45,27 +50,30 @@ export default function JobDetailsPage({ params }: { params: { id: string } }) {
 					</div>
 				</div>
 				<div className="mt-5 flex lg:mt-0 lg:ml-4">
-					<Button>Apply Now</Button>
+					<Link href={`/jobs/${job.id}/apply`}>
+						<Button>Apply Now</Button>
+					</Link>
 				</div>
 			</div>
 			<div className="mt-8 border-t border-gray-200 pt-8">
 				<h3 className="text-lg font-medium text-gray-900">Job Description</h3>
 				<div className="mt-4 prose prose-indigo text-gray-500">
 					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
-						dolore magna aliqua.
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+						labore et dolore magna aliqua.
 					</p>
 					<ul>
 						<li>
-							Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat.
+							Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+							commodo consequat.
 						</li>
 						<li>
-							Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+							Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+							pariatur.
 						</li>
 						<li>
-							Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-							laborum.
+							Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+							anim id est laborum.
 						</li>
 					</ul>
 				</div>
