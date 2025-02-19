@@ -1,9 +1,9 @@
 "use client";
 
-import { usePathname } from "next/navigation";
-import React, { createContext, useState, useContext, ReactNode, useEffect } from "react";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import { usePathname } from "next/navigation";
+import React, { createContext, ReactNode, useContext, useState } from "react";
 
 // Define the shape of the context
 interface WrapperContextContextType {
@@ -22,9 +22,6 @@ export const WrapperContextProvider: React.FC<{ children: ReactNode }> = ({ chil
 	const pathname = usePathname();
 
 	const isHomePage = pathname === "/";
-	useEffect(() => {
-		console.log(pathname);
-	}, []);
 
 	return (
 		<WrapperContextContext.Provider value={{ value, setValue }}>

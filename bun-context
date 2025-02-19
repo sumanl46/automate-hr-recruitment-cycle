@@ -72,6 +72,8 @@ else
     # Generate boilerplate content based on extension
     if [ "$ext" = "tsx" ]; then
         cat > "$filepath" << EOL
+		"use client";
+		
 import React, { createContext, useState, useContext, ReactNode } from 'react';
 
 // Define the shape of the context
@@ -106,6 +108,8 @@ export const use${CONTEXT_NAME} = () => {
 EOL
     elif [ "$ext" = "jsx" ]; then
         cat > "$filepath" << EOL
+		"use client";
+		
 import React, { createContext, useState, useContext } from 'react';
 
 // Create the context with a default value
