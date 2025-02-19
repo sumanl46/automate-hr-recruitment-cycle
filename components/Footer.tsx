@@ -10,38 +10,43 @@ export default function Footer() {
 						<Link href="/" className="text-2xl font-bold">
 							HRCycle
 						</Link>
-						<p className="mt-4 text-gray-400">
-							Revolutionizing HR recruitment through innovation and technology. Streamline your hiring process and find
-							the best talent with HRCycle.
-						</p>
+						<div className="mt-4 text-gray-400 text-sm leading-6 w-4/5">
+							Revolutionizing HR recruitment through innovation and technology. Streamline your hiring
+							process and find the best talent with HRCycle.
+						</div>
 					</div>
 					<div>
-						<h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-						<ul className="space-y-2">
-							<li>
-								<a href="/about" className="text-gray-400 hover:text-white transition-colors">
-									About Us
-								</a>
-							</li>
+						<div className="text-lg font-semibold mb-4 text-gray-300">Quick Links</div>
+						<div className="flex-col space-y-2">
+							<div>
+								<Link href="/about">
+									<div className="text-gray-300 text-sm hover:font-bold hover:text-white duration-200">
+										About Us
+									</div>
+								</Link>
+							</div>
+							<div>
+								<Link href="/contact">
+									<div className="text-gray-300 text-sm hover:font-bold hover:text-white duration-200">
+										Contact
+									</div>
+								</Link>
+							</div>
 
-							<li>
-								<a href="/contact" className="text-gray-400 hover:text-white transition-colors">
-									Contact
-								</a>
-							</li>
+							<div>
+								<Link href="/privacy-policy">
+									<div className="text-gray-300 text-sm hover:font-bold hover:text-white duration-200">
+										Privacy Policy
+									</div>
+								</Link>
+							</div>
 
-							<li>
-								<a href="/privacy-policy" className="text-gray-400 hover:text-white transition-colors">
-									Privacy Policy
-								</a>
-							</li>
-
-							<li>
-								<a href="/terms" className="text-gray-400 hover:text-white transition-colors">
+							<div>
+								<Link href="/terms" className="text-gray-400 hover:text-white transition-colors">
 									Terms of Service
-								</a>
-							</li>
-						</ul>
+								</Link>
+							</div>
+						</div>
 					</div>
 
 					<div>

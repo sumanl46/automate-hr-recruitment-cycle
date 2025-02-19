@@ -110,3 +110,66 @@ export const jobListings = [
 		applyLink: "https://peoplefirst.com/jobs/hr-coordinator",
 	},
 ];
+
+export const HRJobListings = [
+	{
+		id: 1,
+		title: "Software Engineer",
+		company: "TechCorp",
+		category: "Technology",
+		location: "San Francisco, CA",
+		logo: "/placeholder.svg",
+		description:
+			"Develop and maintain web applications, collaborate with cross-functional teams, and optimize system performance.",
+		salary: "$100,000 - $120,000",
+		employmentType: "Full-time",
+		requirements: [
+			"Proficiency in JavaScript, React, and Node.js",
+			"Experience with RESTful APIs",
+			"Strong problem-solving skills",
+		],
+		postedDate: "2025-02-15",
+		applyLink: "https://techcorp.com/careers/software-engineer",
+		postedBy: "Anatomy", // Same person for all jobs
+	},
+	{
+		id: 2,
+		title: "Marketing Manager",
+		company: "GrowthInc",
+		category: "Marketing",
+		location: "New York, NY",
+		logo: "/placeholder.svg",
+		description:
+			"Lead marketing campaigns, analyze market trends, and drive brand growth through innovative strategies.",
+		salary: "$80,000 - $95,000",
+		employmentType: "Full-time",
+		requirements: [
+			"Experience in digital marketing and SEO",
+			"Strong leadership and communication skills",
+			"Ability to analyze marketing data",
+		],
+		postedDate: "2025-02-14",
+		applyLink: "https://growthinc.com/jobs/marketing-manager",
+		postedBy: "Anatomy", // Same person here too
+	},
+	{
+		id: 3,
+		title: "Sales Representative",
+		company: "SalesPro",
+		category: "Sales",
+		location: "Chicago, IL",
+		logo: "/placeholder.svg",
+		description: "Manage client relationships, generate leads, and close sales to drive company revenue.",
+		salary: "$60,000 - $75,000 (plus commission)",
+		employmentType: "Full-time",
+		requirements: [
+			"Strong interpersonal and negotiation skills",
+			"Experience in B2B sales",
+			"Ability to meet sales targets",
+		],
+		postedDate: "2025-02-13",
+		applyLink: "https://salespro.com/careers/sales-rep",
+		postedBy: "Anatomy", // And again, same person
+	},
+	// You can keep repeating this for all the job listings...
+];

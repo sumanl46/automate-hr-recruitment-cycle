@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
@@ -36,7 +35,7 @@ export default function JobListings() {
 					<button
 						key={category}
 						onClick={() => setSelectedCategory(category)}
-						className={`px-4 py-2 rounded-md transition-colors border ${
+						className={`px-4 py-2 rounded-md transition-colors cursor-pointer border ${
 							selectedCategory === category
 								? "bg-indigo-600 text-white border-indigo-600"
 								: "text-gray-600 hover:bg-gray-100 border-gray-300"
@@ -64,35 +63,53 @@ export default function JobListings() {
 			</motion.div>
 
 			{/* Job Listings */}
-			<div className="grid gap-6 md:grid-cols-2">
-				{jobListings
-					.filter(
-						(job) =>
-							(selectedCategory === "All" || job.category === selectedCategory) &&
-							(job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-								job.company.toLowerCase().includes(searchTerm.toLowerCase()))
-					)
-					.map((job, index) => (
-						<Link key={job.id} href={`/jobs/${job.id}`} className="block">
-							<motion.div
-								className="bg-white border shadow-md rounded-lg p-6 transition-shadow hover:shadow-lg"
-								initial={{ opacity: 0, y: 20 }}
-								animate={{ opacity: 1, y: 0 }}
-								transition={{ duration: 0.5, delay: 0.1 * index }}
-							>
-								<Badge variant="secondary" className="mb-2">
-									{job.category}
-								</Badge>
-								<div className="text-xl font-semibold text-gray-700">{job.title}</div>
-								<div className="text-indigo-500 text-sm font-medium">{job.company}</div>
-
-								<div className="text-sm text-gray-500 mb-4 mt-2">{job.location}</div>
-								<Button className="w-full bg-indigo-600 hover:bg-indigo-700 text-white">
-									Apply Now
-								</Button>
-							</motion.div>
-						</Link>
-					))}
+			<div className="relative flex gap-5">
+				<div className="grid gap-6 w-2/3">
+					{jobListings
+						.filter(
+							(job) =>
+								(selectedCategory === "All" || job.category === selectedCategory) &&
+								(job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+									job.company.toLowerCase().includes(searchTerm.toLowerCase()))
+						)
+						.map((job, index) => (
+							<Link key={job.id} href={`/jobs/${job.id}`} className="block">
+								<motion.div
+									className="bg-white border border-gray-300 shadow-sm rounded-lg p-6 transition-shadow hover:shadow-lg"
+									initial={{ opacity: 0, y: 20 }}
+									animate={{ opacity: 1, y: 0 }}
+									transition={{ duration: 0.5, delay: 0.1 * index }}
+								>
+									<div className="relative flex justify-between">
+										<Badge variant="secondary" className="mb-2">
+											{job.category}
+										</Badge>
+										<div className="relative text-sm text-gray-600">{job.postedDate}</div>
+									</div>
+									<div className="text-xl font-semibold text-gray-700">{job.title}</div>
+									<div className="text-indigo-500 text-sm font-medium">{job.company}</div>
+									<div className="text-sm text-gray-500 mb-4 mt-2">{job.location}</div>
+								</motion.div>
+							</Link>
+						))}
+				</div>
+				<div className="relative w-1/3">
+					<div className="relative h-auto border p-5 rounded-xl w-full">
+						<div className="relative text-xl text-gray-800 font-bold">Related Searches</div>
+						<div className="relative flex-col space-y-3 text-gray-700 mt-4 text-sm font-medium">
+							<div className="relative">Communication Skills</div>
+							<div className="relative">Data Analysis</div>
+							<div className="relative">Problem Solving</div>
+							<div className="relative">Excel</div>
+							<div className="relative">Organizational Skills</div>
+							<div className="relative">Analytics</div>
+							<div className="relative">SQL</div>
+							<div className="relative">Presentation Skills</div>
+							<div className="relative">Market Research</div>
+							<div className="relative">Reporting</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	);
