@@ -63,7 +63,7 @@ export default function CreateJobPostForm() {
 	};
 
 	return (
-		<Card className="w-full max-w-2xl mx-auto">
+		<Card className="w-full max-w-2xl mx-auto my-16">
 			<CardHeader>
 				<CardTitle>Create/Edit Job Post</CardTitle>
 				<CardDescription>Enter the details for the job posting.</CardDescription>
@@ -72,7 +72,11 @@ export default function CreateJobPostForm() {
 				<CardContent className="space-y-4">
 					<div className="space-y-2">
 						<Label htmlFor="jobType">Job Type</Label>
-						<Select onValueChange={(value) => form.setValue("jobType", value as "internal" | "external" | "both")}>
+						<Select
+							onValueChange={(value) =>
+								form.setValue("jobType", value as "internal" | "external" | "both")
+							}
+						>
 							<SelectTrigger>
 								<SelectValue placeholder="Select job type" />
 							</SelectTrigger>

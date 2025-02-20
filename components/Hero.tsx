@@ -32,7 +32,7 @@ export default function Hero() {
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.5, delay: 0.6 }}
 					>
-						<Link href="/#searchJobsInputField">
+						<Link href="/#explore-jobs">
 							<Button size="lg" className="bg-white text-indigo-600 hover:bg-indigo-50">
 								<Search className="w-5 h-5 mr-2" />
 								Find Jobs
