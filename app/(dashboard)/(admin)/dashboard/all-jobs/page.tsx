@@ -9,9 +9,7 @@ export default function AllJobs() {
 				<div className="relative text-xl text-center">
 					Hi, <span className="font-bold">Anatomy</span>
 				</div>
-				<div className="relative text-sm text-gray-700 mt-4 text-center">
-					Below are your recently posted Jobs.
-				</div>
+				<div className="relative text-sm text-gray-700 mt-4 text-center">Below are your recently posted Jobs.</div>
 			</div>
 			<div className="relative grid md:grid-cols-2 gap-6 mt-16">
 				{/* Looping through job listings */}
@@ -26,9 +24,7 @@ export default function AllJobs() {
 								<div className="relative text-xs mt-2 text-gray-600 text-end">{job.postedDate}</div>
 								<div className="relative text-sm mt-2">{job.location}</div>
 								<div className="relative flex justify-between mt-4">
-									<div className="relative bg-gray-200 px-2 py-1 rounded-md text-xs">
-										{job.company}
-									</div>
+									<div className="relative bg-gray-200 px-2 py-1 rounded-md text-xs">{job.company}</div>
 									<div className="relative text-gray-500 text-sm">{job.employmentType}</div>
 								</div>
 							</div>
