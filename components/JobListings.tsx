@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -15,10 +14,13 @@ import MarketsFilter from "./marktets";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "./ui/select";
 import { ListFilter } from "lucide-react";
 import SearchFieldFilter from "./searchFieldFilter";
+import { useFilterContext } from "@/contexts/FilterContext";
 
 export default function JobListings() {
 	const [selectedCategory, setSelectedCategory] = useState("All");
 	const [searchTerm, setSearchTerm] = useState("");
+
+	const { selectedJobTitle, selectedCountryTimeZone } = useFilterContext() || {};
 
 	return (
 		<div
@@ -26,12 +28,24 @@ export default function JobListings() {
 			className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-12 -mt-24 relative z-20 tracking-wide"
 		>
 			<motion.h2
-				className="text-3xl font-bold mb-8 text-gray-800"
+				className="text-3xl font-semibold mb-8 text-gray-800"
 				initial={{ opacity: 0, y: 20 }}
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 0.5 }}
 			>
 				Open Positions
+				{selectedJobTitle && (
+					<span>
+						{" "}
+						for <span className="text-violet-600">{selectedJobTitle.title}</span>
+					</span>
+				)}
+				{selectedCountryTimeZone && (
+					<span>
+						{" "}
+						in <span className="text-violet-600">{selectedCountryTimeZone.country}</span>
+					</span>
+				)}
 			</motion.h2>
 
 			{/* Search Bar */}

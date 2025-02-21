@@ -173,3 +173,161 @@ export const HRJobListings = [
 	},
 	// You can keep repeating this for all the job listings...
 ];
+
+export const jobsAndSkills = [
+	{
+		title: "Software Engineer",
+		descript: "Writes, tests, and maintains code for software applications, ensuring they run smoothly.",
+	},
+	{
+		title: "Full-Stack Developer",
+		descript: "Works on both the front-end and back-end of web applications, handling all layers of development.",
+	},
+	{
+		title: "Data Analyst",
+		descript: "Interprets complex data to provide insights and recommendations for business decisions.",
+	},
+	{
+		title: "Cybersecurity Specialist",
+		descript: "Focuses on protecting networks, systems, and data from digital threats and attacks.",
+	},
+	{
+		title: "Cloud Engineer",
+		descript:
+			"Designs and manages cloud infrastructure and services, ensuring scalability, performance, and security.",
+	},
+	{
+		title: "Machine Learning Engineer",
+		descript: "Builds algorithms and models that allow machines to learn from data and make predictions.",
+	},
+	{
+		title: "UX/UI Designer",
+		descript: "Designs user-friendly interfaces and ensures a seamless, positive experience for users.",
+	},
+	{
+		title: "Project Manager",
+		descript: "Oversees projects from start to finish, ensuring they are completed on time and within budget.",
+	},
+	{
+		title: "Backend Developer",
+		descript: "Works on server-side applications and databases, ensuring that everything runs behind the scenes.",
+	},
+	{
+		title: "Frontend Developer",
+		descript: "Builds and maintains the visual components and user interface of web applications.",
+	},
+	{
+		title: "DevOps Engineer",
+		descript: "Automates and improves the process of software delivery and infrastructure management.",
+	},
+	{
+		title: "Database Administrator",
+		descript: "Manages and maintains databases, ensuring data is stored securely and can be accessed efficiently.",
+	},
+	{
+		title: "Technical Writer",
+		descript:
+			"Creates user manuals, documentation, and other written materials to explain complex technical concepts.",
+	},
+	{
+		title: "Mobile App Developer",
+		descript: "Develops applications for mobile devices, focusing on functionality and user experience.",
+	},
+	{
+		title: "Network Administrator",
+		descript: "Manages and maintains computer networks, ensuring connectivity, security, and performance.",
+	},
+	{
+		title: "Game Developer",
+		descript: "Designs and creates video games, working on gameplay, graphics, and coding.",
+	},
+	{
+		title: "IT Support Specialist",
+		descript: "Provides technical support and troubleshooting for hardware and software issues.",
+	},
+	{
+		title: "Blockchain Developer",
+		descript: "Develops decentralized applications and systems using blockchain technology.",
+	},
+	{
+		title: "SEO Specialist",
+		descript: "Optimizes websites and content to improve visibility and ranking in search engine results.",
+	},
+	{
+		title: "Digital Marketing Manager",
+		descript: "Develops and executes online marketing strategies to drive brand awareness and sales.",
+	},
+	{
+		title: "Graphic Designer",
+		descript: "Creates visual content for print or digital media, including logos, brochures, and advertisements.",
+	},
+	{
+		title: "Content Writer",
+		descript:
+			"Writes articles, blogs, and other content for websites and publications, focusing on engaging readers.",
+	},
+	{
+		title: "System Architect",
+		descript:
+			"Designs complex IT systems and infrastructure, ensuring they meet business needs and performance standards.",
+	},
+	{
+		title: "QA Engineer",
+		descript: "Tests software to identify bugs and ensure that applications meet quality standards.",
+	},
+	{
+		title: "Product Manager",
+		descript: "Oversees the development and lifecycle of a product, from concept to delivery.",
+	},
+	{
+		title: "Business Analyst",
+		descript: "Analyzes business needs and processes, helping organizations implement improvements and solutions.",
+	},
+	{
+		title: "Penetration Tester",
+		descript: "Simulates cyberattacks to test the security of systems and networks, identifying vulnerabilities.",
+	},
+	{
+		title: "Artificial Intelligence Researcher",
+		descript: "Conducts research and develops AI models and algorithms to solve complex problems.",
+	},
+	{
+		title: "Embedded Systems Engineer",
+		descript: "Designs and develops embedded systems that are used in devices like cars, phones, and appliances.",
+	},
+	{
+		title: "Cloud Security Engineer",
+		descript: "Secures cloud infrastructure and services, protecting data and systems from external threats.",
+	},
+];
+
+export const countriesAndTimezones = [
+	{ country: "United States", timezone: "UTC -05:00 (Eastern Standard Time)", flag: "🇺🇸" },
+	{ country: "Canada", timezone: "UTC -08:00 (Pacific Standard Time)", flag: "🇨🇦" },
+	{ country: "Germany", timezone: "UTC +01:00 (Central European Time)", flag: "🇩🇪" },
+	{ country: "India", timezone: "UTC +05:30 (Indian Standard Time)", flag: "🇮🇳" },
+	{ country: "Australia", timezone: "UTC +10:00 (Australian Eastern Standard Time)", flag: "🇦🇺" },
+	{ country: "United Kingdom", timezone: "UTC +00:00 (Greenwich Mean Time)", flag: "🇬🇧" },
+	{ country: "Brazil", timezone: "UTC -03:00 (Brasilia Time)", flag: "🇧🇷" },
+	{ country: "Japan", timezone: "UTC +09:00 (Japan Standard Time)", flag: "🇯🇵" },
+	{ country: "South Korea", timezone: "UTC +09:00 (Korea Standard Time)", flag: "🇰🇷" },
+	{ country: "Russia", timezone: "UTC +03:00 (Moscow Time)", flag: "🇷🇺" },
+	{ country: "Mexico", timezone: "UTC -06:00 (Central Standard Time)", flag: "🇲🇽" },
+	{ country: "South Africa", timezone: "UTC +02:00 (South Africa Standard Time)", flag: "🇿🇦" },
+	{ country: "China", timezone: "UTC +08:00 (China Standard Time)", flag: "🇨🇳" },
+	{ country: "France", timezone: "UTC +01:00 (Central European Time)", flag: "🇫🇷" },
+	{ country: "Italy", timezone: "UTC +01:00 (Central European Time)", flag: "🇮🇹" },
+];
+
+export const markets = [
+	{ name: "Stock Market" },
+	{ name: "Real Estate Market" },
+	{ name: "Commodity Market" },
+	{ name: "Cryptocurrency Market" },
+	{ name: "Forex Market" },
+	{ name: "Bond Market" },
+	{ name: "Options Market" },
+	{ name: "Futures Market" },
+	{ name: "Derivatives Market" },
+	{ name: "Emerging Markets" },
+];
