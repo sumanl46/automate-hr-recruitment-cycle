@@ -9,7 +9,7 @@ export default function Hero() {
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 lg:py-40">
 				<div className="text-center">
 					<motion.h1
-						className="text-4xl font-extrabold sm:text-5xl md:text-6xl lg:text-7xl"
+						className="text-4xl font-black sm:text-5xl md:text-6xl lg:text-7xl"
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.5, delay: 0.2 }}

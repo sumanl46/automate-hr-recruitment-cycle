@@ -30,8 +30,8 @@ export default function Navbar() {
 				<div className="px-4 sm:px-6 lg:px-8">
 					<div className="flex justify-between h-16 items-center">
 						<div className="flex-shrink-0 flex items-center">
-							<Link href="/" className="text-2xl font-bold text-indigo-600">
-								HRCycle
+							<Link href="/" className="text-2xl font-black text-indigo-600">
+								TechAhead
 							</Link>
 						</div>
 						<div className="hidden md:flex items-center space-x-4">

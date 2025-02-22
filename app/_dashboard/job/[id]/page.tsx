@@ -72,15 +72,15 @@ export default function HRDashboard() {
 					<div className="relative flex justify-between">
 						<div className="relative text-sm text-gray-600 mb-2 font-medium">Job Detail</div>
 						<Link href={`/dashboard/job/${job.id}/edit`}>
-							<Button type="button" className="px-5 text-xs flex items-center font-bold">
+							<Button type="button" className="px-5 text-xs flex items-center font-black">
 								<Edit size={18} />
 								Edit
 							</Button>
 						</Link>
 					</div>
 					<div className="relative flex items-center gap-16 mb-6">
-						<div className="text-4xl font-bold text-gray-800">{job.title}</div>
-						<div className="text-2xl text-gray-800 mt-2 font-bold">{job.salary}</div>
+						<div className="text-4xl font-black text-gray-800">{job.title}</div>
+						<div className="text-2xl text-gray-800 mt-2 font-black">{job.salary}</div>
 					</div>
 					<div className="mb-10">
 						<p className="text-gray-700">{job.description}</p>
@@ -90,7 +90,7 @@ export default function HRDashboard() {
 					</div>
 
 					{/* Application Management */}
-					<h2 className="text-2xl font-semibold mb-4 text-gray-800">Applicants</h2>
+					<h2 className="text-2xl  mb-4 text-gray-800">Applicants</h2>
 					<div className="overflow-x-auto bg-white rounded-lg border">
 						<table className="w-full">
 							<thead className="border-b">

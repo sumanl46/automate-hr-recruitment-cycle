@@ -47,11 +47,11 @@ export function AppSidebar() {
 					<SidebarMenuItem>
 						<SidebarMenuButton size="lg" className="px-0 hover:bg-transparent" asChild>
 							<div className="flex items-center">
-								<div className="flex aspect-square size-10 items-center justify-center font-bold rounded-md bg-sidebar-primary text-sidebar-primary-foreground">
+								<div className="flex aspect-square size-10 items-center justify-center font-black rounded-md bg-sidebar-primary text-sidebar-primary-foreground">
 									<span>T</span>
 								</div>
 								<div className="flex flex-col gap-1 leading-none">
-									<span className="font-semibold">{"TechAhead"}</span>
+									<span className="">{"TechAhead"}</span>
 									<span className="text-secondary-foreground opacity-60 text-xs">HR Recruiment</span>
 								</div>
 							</div>

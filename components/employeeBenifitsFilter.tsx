@@ -90,12 +90,10 @@ export default function EmployeeBenefitsFilter() {
 				>
 					<div className="relative border-b">
 						<div className="relative flex items-center justify-between px-4 py-2">
-							<div className="relative w-1/2 h-full flex items-center text-xs font-bold text-gray-600">
-								Benefits
-							</div>
+							<div className="relative w-1/2 h-full flex items-center text-xs font-black text-gray-600">Benefits</div>
 							{/* Clear button */}
 							<div
-								className="relative h-full flex font-bold text-gray-800 text-sm cursor-pointer"
+								className="relative h-full flex font-black text-gray-800 text-sm cursor-pointer"
 								onClick={handleClearSelection} // Handle clear selection
 							>
 								Clear

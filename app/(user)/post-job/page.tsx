@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import PostJobForm from "@/components/PostJobForm";
 
 export const metadata: Metadata = {
-	title: "Post a Job | HRCycle",
-	description: "Post a new job listing on HRCycle",
+	title: "Post a Job | TechAhead",
+	description: "Post a new job listing on TechAhead",
 };
 
 export default function PostJobPage() {

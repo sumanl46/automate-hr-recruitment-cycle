@@ -8,8 +8,33 @@
 @custom-variant dark (&:is(.dark *));
 
 @layer base {
+	/* Tomato Grotesk */
+	@font-face {
+		font-family: "Tomato Grotesk";
+		font-style: normal;
+		font-weight: 400;
+		font-display: swap;
+		src: url("/fonts/TomatoGrotesk-Regular.woff2") format("woff2");
+	}
+
+	@font-face {
+		font-family: "Tomato Grotesk";
+		font-style: normal;
+		font-weight: 700;
+		font-display: swap;
+		src: url("/fonts/TomatoGrotesk-Bold.woff2") format("woff2");
+	}
+
+	@font-face {
+		font-family: "Tomato Grotesk";
+		font-style: normal;
+		font-weight: 900;
+		font-display: swap;
+		src: url("/fonts/TomatoGrotesk-Black.woff2") format("woff2");
+	}
+
 	* {
-		@apply scroll-smooth font-['Inter_Tight'];
+		@apply scroll-smooth font-['Tomato_Grotesk'] antialiased;
 	}
 }
 

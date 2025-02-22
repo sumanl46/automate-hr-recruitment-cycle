@@ -3,8 +3,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-	title: "Sign In | HRCycle",
-	description: "Sign in to your HRCycle account",
+	title: "Sign In | TechAhead",
+	description: "Sign in to your TechAhead account",
 };
 
 export default function SignInPage() {

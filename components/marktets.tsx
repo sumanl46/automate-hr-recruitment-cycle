@@ -69,12 +69,10 @@ export default function MarketsFilter() {
 				>
 					<div className="relative border-b">
 						<div className="relative flex items-center justify-between px-4 py-2">
-							<div className="relative w-1/2 h-full flex items-center text-xs font-bold text-gray-600">
-								Markets
-							</div>
+							<div className="relative w-1/2 h-full flex items-center text-xs font-black text-gray-600">Markets</div>
 
 							<div
-								className="relative h-full flex font-bold text-gray-800 text-sm cursor-pointer"
+								className="relative h-full flex font-black text-gray-800 text-sm cursor-pointer"
 								onClick={handleClearSelection}
 							>
 								Clear

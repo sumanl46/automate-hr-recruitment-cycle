@@ -69,20 +69,14 @@ export default function EditJob() {
 			className="max-w-4xl mx-auto px-4 py-12"
 		>
 			<div className="relative flex justify-between">
-				<h1 className="text-3xl font-bold mb-6">Edit Job</h1>
+				<h1 className="text-3xl font-black mb-6">Edit Job</h1>
 
-				<Button type="button" variant="destructive" className="font-bold" size="lg">
+				<Button type="button" variant="destructive" className="font-black" size="lg">
 					Cancel Editing
 				</Button>
 			</div>
 			<form onSubmit={handleSubmit} className="space-y-4">
-				<Input
-					type="text"
-					name="title"
-					value={formData.title}
-					onChange={handleChange}
-					placeholder="Job Title"
-				/>
+				<Input type="text" name="title" value={formData.title} onChange={handleChange} placeholder="Job Title" />
 				<Textarea
 					name="description"
 					value={formData.description}
@@ -90,13 +84,7 @@ export default function EditJob() {
 					placeholder="Job Description"
 					rows={10}
 				/>
-				<Input
-					type="text"
-					name="location"
-					value={formData.location}
-					onChange={handleChange}
-					placeholder="Location"
-				/>
+				<Input type="text" name="location" value={formData.location} onChange={handleChange} placeholder="Location" />
 				<Input type="text" name="salary" value={formData.salary} onChange={handleChange} placeholder="Salary" />
 				<Input
 					type="text"
