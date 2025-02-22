@@ -28,7 +28,7 @@ export default function JobListings() {
 			className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-12 -mt-24 relative z-20 tracking-wide"
 		>
 			<motion.h2
-				className="text-3xl font-bold tracking-tight font-['Inter_Tight'] mb-8 text-gray-800"
+				className="text-3xl font-black tracking-tight font-['Inter_Tight'] mb-8 text-gray-800"
 				initial={{ opacity: 0, y: 20 }}
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ duration: 0.5 }}
@@ -74,9 +74,7 @@ export default function JobListings() {
 					<div className="relative h-10 w-full flex justify-between">
 						<div className="rleative text-base text-gray-800 first-letter:uppercase">
 							Total jobs
-							<span className="px-2 ml-2 text-xs font-medium py-1 border rounded-md">
-								{jobListings.length}
-							</span>
+							<span className="px-2 ml-2 text-xs font-medium py-1 border rounded-md">{jobListings.length}</span>
 						</div>
 						<div className="relative">
 							<Select>

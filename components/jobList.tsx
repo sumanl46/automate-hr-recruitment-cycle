@@ -193,8 +193,7 @@ export const jobsAndSkills = [
 	},
 	{
 		title: "Cloud Engineer",
-		descript:
-			"Designs and manages cloud infrastructure and services, ensuring scalability, performance, and security.",
+		descript: "Designs and manages cloud infrastructure and services, ensuring scalability, performance, and security.",
 	},
 	{
 		title: "Machine Learning Engineer",
@@ -226,8 +225,7 @@ export const jobsAndSkills = [
 	},
 	{
 		title: "Technical Writer",
-		descript:
-			"Creates user manuals, documentation, and other written materials to explain complex technical concepts.",
+		descript: "Creates user manuals, documentation, and other written materials to explain complex technical concepts.",
 	},
 	{
 		title: "Mobile App Developer",
@@ -263,8 +261,7 @@ export const jobsAndSkills = [
 	},
 	{
 		title: "Content Writer",
-		descript:
-			"Writes articles, blogs, and other content for websites and publications, focusing on engaging readers.",
+		descript: "Writes articles, blogs, and other content for websites and publications, focusing on engaging readers.",
 	},
 	{
 		title: "System Architect",
@@ -331,7 +328,21 @@ export const markets = [
 	{ name: "Derivatives Market" },
 	{ name: "Emerging Markets" },
 ];
-export const applicants = [
+
+export interface Applicant {
+	id: number;
+	jobTitle: string;
+	company: string;
+	location: string;
+	logo: string;
+	applicantName: string;
+	email: string;
+	skills: string[] | [];
+	experience: string;
+	status: string;
+}
+
+export const applicants: Applicant[] = [
 	{
 		id: 1,
 		jobTitle: "Frontend Developer",

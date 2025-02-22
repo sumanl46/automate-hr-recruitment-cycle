@@ -8,7 +8,7 @@ interface SocialLink {
 	link: string;
 }
 
-interface Applicant {
+export interface Applicant {
 	id: string;
 	firstName: string;
 	lastName: string;
@@ -17,37 +17,41 @@ interface Applicant {
 	location: string;
 	profileImage: string;
 	jobTitle: string;
-	socialLinks: SocialLink[];
+	socialLinks: SocialLink[] | [];
 	isAuthenticated: boolean;
-	education?: Array<{ degree: string; institution: string; year: string }>;
-	experience?: Array<{
-		position: string;
-		company: string;
-		duration: string;
-		responsibilities: string[];
-	}>;
-	skills?: string[];
-	appliedJobs?: Array<{
-		id: number;
-		title: string;
-		company: string;
-		category: string;
-		location: string;
-		logo: string;
-		description: string;
-		salary: string;
-		employmentType: string;
-		requirements: string[];
-		postedDate: string;
-		applyLink: string;
-		postedBy: string;
-	}>;
+	education: Array<{ degree: string; institution: string; year: string }> | [];
+	experience:
+		| Array<{
+				position: string;
+				company: string;
+				duration: string;
+				responsibilities: string[];
+		  }>
+		| [];
+	skills: string[] | [];
+	appliedJobs:
+		| Array<{
+				id: number;
+				title: string;
+				company: string;
+				category: string;
+				location: string;
+				logo: string;
+				description: string;
+				salary: string;
+				employmentType: string;
+				requirements: string[];
+				postedDate: string;
+				applyLink: string;
+				postedBy: string;
+		  }>
+		| [];
 }
 
 const AuthContext = createContext<{
 	applicant: Applicant | null;
 	setApplicant: React.Dispatch<React.SetStateAction<Applicant | null>>;
-	updateApplicant: (field: keyof Applicant, value: any) => void;
+	updateApplicant: (field: keyof Applicant, value: unknown) => void;
 } | null>(null);
 
 interface AuthContextProviderProps {
@@ -131,7 +135,7 @@ export default function AuthContextProvider({ children }: AuthContextProviderPro
 	});
 
 	// Function to update specific applicant field dynamically
-	const updateApplicant = (field: keyof Applicant, value: any) => {
+	const updateApplicant = (field: keyof Applicant, value: unknown) => {
 		if (applicant) {
 			setApplicant((prev) => ({ ...prev, [field]: value }));
 		}

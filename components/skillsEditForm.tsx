@@ -44,7 +44,7 @@ export default function SkillsEditForm() {
 
 	return (
 		<div className="flex-col space-y-2">
-			<div className="relative text-sm font-semibold text-gray-800">Skills</div>
+			<div className="relative text-sm font-black text-gray-800">Skills</div>
 			<div className="relative">
 				<div className="relative flex flex-wrap gap-2">
 					{skills.map((skill, index) => (
@@ -65,10 +65,7 @@ export default function SkillsEditForm() {
 							value={searchQuery}
 							onChange={(e) => setSearchQuery(e.target.value)}
 						/>
-						<div
-							className="w-10 flex justify-center items-center cursor-pointer"
-							onClick={handleDropdownToggle}
-						>
+						<div className="w-10 flex justify-center items-center cursor-pointer" onClick={handleDropdownToggle}>
 							{!isDropdownVisible ? <ChevronDown size={16} /> : <ChevronUp size={16} />}
 						</div>
 					</div>
@@ -84,9 +81,7 @@ export default function SkillsEditForm() {
 									{skill}
 								</div>
 							))}
-							{filteredSkills.length === 0 && (
-								<div className="py-2 px-4 text-sm text-gray-500">No skills found</div>
-							)}
+							{filteredSkills.length === 0 && <div className="py-2 px-4 text-sm text-gray-500">No skills found</div>}
 						</div>
 					)}
 				</div>

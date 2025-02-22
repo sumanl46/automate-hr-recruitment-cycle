@@ -23,7 +23,7 @@ export default function EditProfilePage() {
 							<div className="relative flex justify-between">
 								<div className="relative flex-col space-y-4 pt-2">
 									<div className="relative flex-col space-y-2">
-										<div className="font-semibold text-3xl text-gray-800">Edit Profile</div>
+										<div className="font-black text-3xl text-gray-800">Edit Profile</div>
 									</div>
 								</div>
 							</div>
