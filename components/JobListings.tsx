@@ -56,7 +56,7 @@ export default function JobListings() {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.5, delay: 0.3 }}
 				>
-					<SearchFieldFilter searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+					<SearchFieldFilter />
 				</motion.div>
 
 				<motion.div className="relative flex gap-4 flex-wrap px-5 border-t border-gray-100 py-5">
@@ -69,12 +69,14 @@ export default function JobListings() {
 				</motion.div>
 			</div>
 			{/* Job Listings */}
-			<div className="relative flex gap-5 mt-10">
-				<div className="grid gap-6 w-2/3">
+			<div className="relative mt-10">
+				<div className="grid gap-6 w-full">
 					<div className="relative h-10 w-full flex justify-between">
 						<div className="rleative text-base text-gray-800 first-letter:uppercase">
 							Total jobs
-							<span className="px-2 ml-2 text-xs font-medium py-1 border rounded-md">{jobListings.length}</span>
+							<span className="px-2 ml-2 text-xs font-medium py-1 border rounded-md">
+								{jobListings.length}
+							</span>
 						</div>
 						<div className="relative">
 							<Select>
